@@ -1,6 +1,6 @@
 package com.zomato.clone.model;
 
-public class PaymentDetails {
+public class PaymentEntity {
 
     private String paymentType;
     private String details;

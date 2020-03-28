@@ -11,18 +11,35 @@ public class OrderEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long order_id;
 
-    private String menu;
+    private String item;
     private int quantity;
     private String delivery_id;
     private char status;
     private double cost;
-    private char availability;
     private String transaction_id;
     @OneToOne
     @JoinColumn(name ="customer_id")
     private String customerId;
     private java.util.Date updated;
     private java.util.Date created;
+    private String rating;
+    private String review;
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public String getReview() {
+        return review;
+    }
+
+    public void setReview(String review) {
+        this.review = review;
+    }
 
     public Long getOrder_id() {
         return order_id;
@@ -32,12 +49,12 @@ public class OrderEntity {
         this.order_id = order_id;
     }
 
-    public String getMenu() {
-        return menu;
+    public String getItem() {
+        return item;
     }
 
-    public void setMenu(String menu) {
-        this.menu = menu;
+    public void setItem(String item) {
+        this.item = item;
     }
 
     public int getQuantity() {
@@ -72,13 +89,6 @@ public class OrderEntity {
         this.cost = cost;
     }
 
-    public char getAvailability() {
-        return availability;
-    }
-
-    public void setAvailability(char availability) {
-        this.availability = availability;
-    }
 
     public String getTransaction_id() {
         return transaction_id;
