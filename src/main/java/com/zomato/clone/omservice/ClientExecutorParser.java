@@ -1,13 +1,14 @@
 package com.zomato.clone.omservice;
 
 import com.zomato.clone.model.PaymentEntity;
+import org.springframework.http.ResponseEntity;
 
 public interface ClientExecutorParser {
 
-    public PaymentEntity paymentExcuterParser();
+    public PaymentEntity paymentExcuterParser(ResponseEntity<PaymentEntity> response );
 
-    public void realTimeTrackingExecutorParser();
+    public void realTimeTrackingExecutorParser(ResponseEntity<String> response );
 
-    public void ratingReviewExecutorParser();
+    public void ratingReviewExecutorParser(ResponseEntity<String> response);
 
 }
