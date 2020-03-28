@@ -1,4 +1,4 @@
 package com.zomato.clone.controller;
 
-public interface CustomerController {
+public class CustomerController {
 }
