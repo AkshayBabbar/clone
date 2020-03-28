@@ -1,12 +1,15 @@
 package com.zomato.clone.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="ORDER")
 public class Order {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long order_id;
 
     private String menu;
     private int quantity;
@@ -15,9 +18,19 @@ public class Order {
     private double cost;
     private char availability;
     private String transaction_id;
+    @ManyToOne
+    @JoinColumn(name ="customer_id")
     private String customerId;
     private java.util.Date updated;
     private java.util.Date created;
+
+    public Long getOrder_id() {
+        return order_id;
+    }
+
+    public void setOrder_id(Long order_id) {
+        this.order_id = order_id;
+    }
 
     public String getMenu() {
         return menu;
@@ -98,4 +111,6 @@ public class Order {
     public void setCreated(Date created) {
         this.created = created;
     }
+
+
 }
