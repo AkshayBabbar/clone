@@ -11,6 +11,35 @@ public class CustomerEntity {
     private Long customer_id;
     private String name;
     private int address_id;
+    private String details;
+    private Long order_id;
+
+    private String paymentType;
+    public Long getOrder_id() {
+        return order_id;
+    }
+
+    public void setOrder_id(Long order_id) {
+        this.order_id = order_id;
+    }
+
+
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    public String getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(String paymentType) {
+        this.paymentType = paymentType;
+    }
 
     public Long getCustomer_id() {
         return customer_id;
@@ -36,11 +65,4 @@ public class CustomerEntity {
         this.address_id = address_id;
     }
 
-
-
-    public CustomerEntity(Long customer_id, String name, int address_id) {
-        this.customer_id = customer_id;
-        this.name = name;
-        this.address_id = address_id;
-    }
 }

@@ -19,12 +19,6 @@ public class PromotionEntity {
     @JoinColumn(name ="order_id")
     private String order_id;
 
-    public PromotionEntity(Long promo_id, String promo_code, String order_id) {
-        this.promo_id = promo_id;
-        this.promo_code = promo_code;
-        this.order_id = order_id;
-    }
-
     public PromotionEntity() {
     }
 
