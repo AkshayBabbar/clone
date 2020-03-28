@@ -2,6 +2,7 @@ package com.zomato.clone.model;
 
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "PAYMENT")
@@ -15,6 +16,8 @@ public class PaymentEntity {
     private String paymentType;
     @Column(name = "details")
     private String details;
+    @ManyToOne
+    @JoinColumn(name ="order_id")
     @Column(name = "order_id")
     private Long order_id;
     @Column(name = "pmt_sts")
@@ -22,6 +25,26 @@ public class PaymentEntity {
     @Column(name = "price")
     private Float price;
 
+    @Column(name = "upd_date")
+    private java.util.Date updated;
+    @Column(name = "cre_date")
+    private java.util.Date created;
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
 
     public String getPaymentType() {
         return paymentType;

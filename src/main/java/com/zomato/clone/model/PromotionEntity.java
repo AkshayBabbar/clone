@@ -2,6 +2,7 @@ package com.zomato.clone.model;
 
 import javax.persistence.*;
 import java.sql.Time;
+import java.util.Date;
 
 @Entity
 @Table(name="PROMOTION")
@@ -13,14 +14,38 @@ public class PromotionEntity {
 
     @Column(name = "promo_code")
     private String promo_code;
-    @Column(name = "create_date")
-    private java.util.Date createDate;
+
     @Column(name = "end_date")
     private java.util.Date endDate;
 
     @ManyToOne
     @JoinColumn(name ="order_id")
     private String order_id;
+
+    @Column(name = "upd_date")
+    private java.util.Date updated;
+    @Column(name = "cre_date")
+    private java.util.Date created;
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
 
     public PromotionEntity() {
     }
@@ -41,13 +66,7 @@ public class PromotionEntity {
         this.promo_code = promo_code;
     }
 
-    public java.util.Date getCreateDate() {
-        return createDate;
-    }
 
-    public void setCreateDate(java.util.Date createDate) {
-        this.createDate = createDate;
-    }
 
     public java.util.Date getEndDate() {
         return endDate;

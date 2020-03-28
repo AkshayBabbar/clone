@@ -10,17 +10,26 @@ public class OrderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long order_id;
-
+    @Column(name = "item")
     private String item;
+    @Column(name = "quantity")
     private int quantity;
+    @Column(name = "deliver_id")
     private String delivery_id;
+    @Column(name = "status")
     private char status;
+    @Column(name = "price")
     private double cost;
+    @OneToOne
+    @JoinColumn(name = "transaction_id")
     private String transaction_id;
     @OneToOne
     @JoinColumn(name ="customer_id")
     private String customerId;
+
+    @Column(name = "upd_date")
     private java.util.Date updated;
+    @Column(name = "cre_date")
     private java.util.Date created;
     private String rating;
     private String review;

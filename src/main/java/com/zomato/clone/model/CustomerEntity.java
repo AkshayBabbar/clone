@@ -1,6 +1,7 @@
 package com.zomato.clone.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name="CUSTOMER")
@@ -20,6 +21,27 @@ public class CustomerEntity {
     private Long order_id;
     @Column(name = "type")
     private String paymentType;
+
+    @Column(name = "upd_date")
+    private java.util.Date updated;
+    @Column(name = "cre_date")
+    private java.util.Date created;
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
 
     public Long getOrder_id() {
         return order_id;
