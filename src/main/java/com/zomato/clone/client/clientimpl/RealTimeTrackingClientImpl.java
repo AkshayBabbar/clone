@@ -19,7 +19,7 @@ public class RealTimeTrackingClientImpl implements RealTimeTrackingClient {
     public ResponseEntity<String> startRealTimeTracking(DeliveryDetails requestBody) {
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<DeliveryDetails> entity = new HttpEntity<DeliveryDetails>(requestBody);
-        ResponseEntity response = restTemplate.exchange(url, HttpMethod.POST,entity, String.class);
+        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST,entity, String.class);
         return response;
     }
 }
