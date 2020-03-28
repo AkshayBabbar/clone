@@ -2,7 +2,7 @@ package com.zomato.clone.client.impl;
 
 import com.zomato.clone.client.PaymentGatewayClient;
 import com.zomato.clone.commons.constants.OrderMgmtConstants;
-import com.zomato.clone.model.PaymentEntity;
+import com.zomato.clone.model.PaymentDetails;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -13,11 +13,11 @@ public class PaymentGatewayClientImpl implements PaymentGatewayClient {
     private String uri = OrderMgmtConstants.baseUrl + "/payment/orderPayment";
 
     @Override
-    public ResponseEntity<PaymentEntity> paymentDetails(PaymentEntity paymentEntity) {
+    public ResponseEntity<PaymentDetails> startPaymentTransaction(PaymentDetails paymentEntity) {
 
         RestTemplate restTemplate = new RestTemplate();
-        HttpEntity<PaymentEntity> entity = new HttpEntity<PaymentEntity>(paymentEntity);
-        ResponseEntity<PaymentEntity> response = restTemplate.exchange(uri, HttpMethod.POST, entity, PaymentEntity.class);
+        HttpEntity<PaymentDetails> entity = new HttpEntity<PaymentDetails>(paymentEntity);
+        ResponseEntity<PaymentDetails> response = restTemplate.exchange(uri, HttpMethod.POST, entity, PaymentDetails.class);
         return response;
     }
 }

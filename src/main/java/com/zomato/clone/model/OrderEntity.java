@@ -19,10 +19,8 @@ public class OrderEntity {
     @Column(name = "status")
     private char status;
     @Column(name = "price")
-    private double cost;
-    @OneToOne
-    @JoinColumn(name = "transaction_id")
-    private String transaction_id;
+    private Float cost;
+
     @OneToOne
     @JoinColumn(name ="customer_id")
     private String customerId;
@@ -90,22 +88,14 @@ public class OrderEntity {
         this.status = status;
     }
 
-    public double getCost() {
+    public Float getCost() {
         return cost;
     }
 
-    public void setCost(double cost) {
+    public void setCost(Float cost) {
         this.cost = cost;
     }
 
-
-    public String getTransaction_id() {
-        return transaction_id;
-    }
-
-    public void setTransaction_id(String transaction_id) {
-        this.transaction_id = transaction_id;
-    }
 
     public String getCustomerId() {
         return customerId;

@@ -4,30 +4,15 @@ package com.zomato.clone.model;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
-@Table(name = "PAYMENT")
-public class PaymentEntity {
+public class PaymentDetails {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long transactionId;
 
-    @Column(name = "pmt_type")
     private String paymentType;
-    @Column(name = "details")
     private String details;
-    @ManyToOne
-    @JoinColumn(name ="order_id")
-    @Column(name = "order_id")
     private Long order_id;
-    @Column(name = "pmt_sts")
     private String payment_status;
-    @Column(name = "price")
     private Float price;
-
-    @Column(name = "upd_date")
     private java.util.Date updated;
-    @Column(name = "cre_date")
     private java.util.Date created;
 
     public Date getUpdated() {
@@ -86,11 +71,4 @@ public class PaymentEntity {
         this.price = price;
     }
 
-    public Long getTransactionId() {
-        return transactionId;
-    }
-
-    public void setTransactionId(Long transactionId) {
-        this.transactionId = transactionId;
-    }
 }

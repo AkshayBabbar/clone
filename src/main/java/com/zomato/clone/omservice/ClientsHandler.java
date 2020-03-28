@@ -4,4 +4,5 @@ public interface ClientsHandler {
     public void orderRating();
     public void orderTracking();
     public void orderPayment();
+    public void setOrderId(Long orderId);
 }

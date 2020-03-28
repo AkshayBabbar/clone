@@ -39,6 +39,7 @@ public class CustomerAndOrderHandlerImpl implements CustomerAndOrderHandler {
             CustomerEntity customerEntity = customer.findById(Long.parseLong(orderEntity.getCustomerId())).get();
             customerEntity.setOrder_id(orderEntity.getOrder_id());
             customer.save(customerEntity);
+            clientsHandler.setOrderId(orderEntity.getOrder_id());
 
         }
         catch(Exception ex){
