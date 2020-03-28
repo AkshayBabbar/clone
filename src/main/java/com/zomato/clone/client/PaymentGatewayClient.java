@@ -1,8 +1,9 @@
 package com.zomato.clone.client;
 
+import com.zomato.clone.model.PaymentEntity;
 import org.springframework.http.ResponseEntity;
 
 public interface PaymentGatewayClient {
 
-public ResponseEntity<String> paymentDetails(Long order_id);
+public ResponseEntity<PaymentEntity> paymentDetails(PaymentEntity paymentEntity);
 }
