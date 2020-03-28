@@ -18,7 +18,7 @@ public class Order {
     private double cost;
     private char availability;
     private String transaction_id;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name ="customer_id")
     private String customerId;
     private java.util.Date updated;

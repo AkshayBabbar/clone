@@ -9,10 +9,14 @@ public class PromotionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long promo_id;
+
+
     private String promo_code;
     private java.util.Date createDate;
     private java.util.Date endDate;
 
+    @ManyToOne
+    @JoinColumn(name ="order_id")
     private String order_id;
 
     public PromotionEntity(Long promo_id, String promo_code, String order_id) {
