@@ -8,7 +8,7 @@ import java.util.Date;
 public class OrderEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long order_id;
 
     private String item;

@@ -1,13 +1,27 @@
 package com.zomato.clone.model;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "PAYMENT")
 public class PaymentEntity {
 
-    private String paymentType;
-    private String details;
-    private Long order_id;
-    private String payment_status;
-    private Float price;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long transactionId;
+
+    @Column(name = "pmt_type")
+    private String paymentType;
+    @Column(name = "details")
+    private String details;
+    @Column(name = "order_id")
+    private Long order_id;
+    @Column(name = "pmt_sts")
+    private String payment_status;
+    @Column(name = "price")
+    private Float price;
+
 
     public String getPaymentType() {
         return paymentType;

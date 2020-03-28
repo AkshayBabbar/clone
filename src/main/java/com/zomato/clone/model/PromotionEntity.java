@@ -7,12 +7,15 @@ import java.sql.Time;
 @Table(name="PROMOTION")
 public class PromotionEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long promo_id;
 
 
+    @Column(name = "promo_code")
     private String promo_code;
+    @Column(name = "create_date")
     private java.util.Date createDate;
+    @Column(name = "end_date")
     private java.util.Date endDate;
 
     @ManyToOne
