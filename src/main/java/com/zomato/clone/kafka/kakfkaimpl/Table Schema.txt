@@ -1,0 +1,37 @@
+CREATE TABLE `Order` (
+  `order_id` int PRIMARY KEY AUTO_INCREMENT,
+  `menu` varchar(255) NOT NULL,
+  `quantity` int,
+  `delivery_id` varchar(255) NOT NULL,
+  `status` char NOT NULL,
+  `cost` float NOT NULL,
+  `availability` char,
+  `transaction_id` varchar(255),
+  `customerId` varchar(255),
+  `updated` timestamp,
+  `created_at` timestamp,
+  `country_code` int
+);
+
+CREATE TABLE `promotion` (
+  `promo_id` int PRIMARY KEY AUTO_INCREMENT,
+  `promocode` varchar(255),
+  `end_date` timestamp NOT NULL,
+  `created_date` varchar(255),
+  `order_id` int
+);
+
+CREATE TABLE `customer` (
+  `customer_id` int PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `address_id` int NOT NULL,
+  `card_details` varchar(255),
+  `created_at` datetime DEFAULT (now()),
+  `order_id` int
+);
+
+ALTER TABLE `Order` ADD FOREIGN KEY (`customerId`) REFERENCES `customer` (`customer_id`);
+
+ALTER TABLE `promotion` ADD FOREIGN KEY (`order_id`) REFERENCES `Order` (`order_id`);
+
+ALTER TABLE `customer` ADD FOREIGN KEY (`order_id`) REFERENCES `Order` (`order_id`);

@@ -1,23 +1,22 @@
 package com.zomato.clone.persistence.persistenceimpl;
 
-import com.zomato.clone.model.OrderEntity;
-import com.zomato.clone.persistence.Order;
+import com.zomato.clone.model.Order;
 
 import java.util.Optional;
 
-public class OrderImpl implements Order {
+public class OrderImpl implements com.zomato.clone.persistence.Order {
     @Override
-    public <S extends OrderEntity> S save(S s) {
+    public <S extends Order> S save(S s) {
         return null;
     }
 
     @Override
-    public <S extends OrderEntity> Iterable<S> saveAll(Iterable<S> iterable) {
+    public <S extends Order> Iterable<S> saveAll(Iterable<S> iterable) {
         return null;
     }
 
     @Override
-    public Optional<OrderEntity> findById(Long aLong) {
+    public Optional<Order> findById(Long aLong) {
         return Optional.empty();
     }
 
@@ -27,12 +26,12 @@ public class OrderImpl implements Order {
     }
 
     @Override
-    public Iterable<OrderEntity> findAll() {
+    public Iterable<Order> findAll() {
         return null;
     }
 
     @Override
-    public Iterable<OrderEntity> findAllById(Iterable<Long> iterable) {
+    public Iterable<Order> findAllById(Iterable<Long> iterable) {
         return null;
     }
 
@@ -47,12 +46,12 @@ public class OrderImpl implements Order {
     }
 
     @Override
-    public void delete(OrderEntity orderEntity) {
+    public void delete(Order order) {
 
     }
 
     @Override
-    public void deleteAll(Iterable<? extends OrderEntity> iterable) {
+    public void deleteAll(Iterable<? extends Order> iterable) {
 
     }
 
